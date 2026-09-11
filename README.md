@@ -1,11 +1,11 @@
 # SourceSort
 
-[![CI](https://github.com/kenolorenzen/SourceSort/actions/workflows/ci.yml/badge.svg)](https://github.com/kenolorenzen/SourceSort/actions/workflows/ci.yml)
+[![CI](https://github.com/KenoLorenzen456/SourceSort/actions/workflows/ci.yml/badge.svg)](https://github.com/KenoLorenzen456/SourceSort/actions/workflows/ci.yml)
 ![macOS 15+](https://img.shields.io/badge/macOS-15%2B-blue)
 ![Swift 6](https://img.shields.io/badge/Swift-6-orange)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-**[Download SourceSort 1.0 (DMG)](https://github.com/kenolorenzen/SourceSort/releases/latest)**
+**[Download SourceSort 1.0 (DMG)](https://github.com/KenoLorenzen456/SourceSort/releases/latest)**
 
 A menu-bar utility for macOS that files your downloads by **the website they came from**. It can also sort by filename, extension, file type and size.
 
