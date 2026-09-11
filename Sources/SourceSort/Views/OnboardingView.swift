@@ -43,7 +43,7 @@ struct OnboardingView: View {
             }
             .padding()
         }
-        .frame(width: 620, height: 520)
+        .frame(minWidth: 620, minHeight: 520)
     }
 
     private var welcome: some View {

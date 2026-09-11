@@ -13,7 +13,9 @@ public struct JSONStore: Sendable {
         let url = directory.appendingPathComponent(name)
         guard let data = try? Data(contentsOf: url) else { return nil }
         do {
-            return try JSONDecoder().decode(type, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            return try decoder.decode(type, from: data)
         } catch {
             // Keep unreadable data aside instead of overwriting it with defaults.
             let backup = url.appendingPathExtension("corrupt-\(Int(Date().timeIntervalSince1970))")

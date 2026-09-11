@@ -72,19 +72,19 @@ struct ActivityView: View {
                 }
                 .help(e.sourceURL ?? "")
             }
-            .width(min: 160, ideal: 240)
+            .width(min: 140, ideal: 200)
             TableColumn("Source") { e in Text(e.sourceDomain ?? "Unknown").foregroundStyle(e.sourceDomain == nil ? .secondary : .primary) }
-                .width(min: 80, ideal: 130)
+                .width(min: 70, ideal: 100)
             TableColumn("Rule") { e in Text(e.ruleName ?? "—").foregroundStyle(e.ruleName == nil ? .secondary : .primary) }
-                .width(min: 70, ideal: 120)
+                .width(min: 60, ideal: 90)
             TableColumn("Result") { e in
                 Text(e.resultText)
                     .foregroundStyle(e.outcome == .failed ? AnyShapeStyle(.red) : AnyShapeStyle(.primary))
                     .help(e.newPath.map { ($0 as NSString).abbreviatingWithTildeInPath } ?? e.errorMessage ?? "")
             }
-            .width(min: 100, ideal: 160)
+            .width(min: 90, ideal: 130)
             TableColumn("Date") { e in Text(e.date.formatted(date: .abbreviated, time: .shortened)).foregroundStyle(.secondary) }
-                .width(min: 90, ideal: 130)
+                .width(min: 80, ideal: 110)
             TableColumn("") { e in
                 if e.canUndo {
                     Button("Undo") { model.undo(e) }

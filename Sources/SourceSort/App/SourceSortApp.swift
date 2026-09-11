@@ -18,7 +18,7 @@ struct SourceSortApp: App {
         Window("SourceSort", id: "main") {
             MainWindow().environment(model)
         }
-        .defaultSize(width: 860, height: 560)
+        .defaultSize(width: 940, height: 580)
         .windowResizability(.contentMinSize)
         // Shown at launch only when there is no other way in: first run, or the menu bar icon is hidden.
         .defaultLaunchBehavior(model.onboardingDone && showMenuBarIcon ? .suppressed : .presented)
@@ -27,7 +27,8 @@ struct SourceSortApp: App {
                 Button("Settings…") { model.showMainWindow(.settings) }.keyboardShortcut(",")
             }
             CommandGroup(replacing: .newItem) {}
-            CommandMenu("View") {
+            // Adds to the system View menu; a CommandMenu("View") would be a second menu SwiftUI drops.
+            CommandGroup(before: .toolbar) {
                 ForEach(Array(SidebarSection.allCases.enumerated()), id: \.element) { i, section in
                     Button(section.title) { model.showMainWindow(section) }
                         .keyboardShortcut(KeyEquivalent(Character("\(i + 1)")))
