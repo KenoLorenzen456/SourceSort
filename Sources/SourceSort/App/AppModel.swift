@@ -47,7 +47,7 @@ final class AppModel {
     var section: SidebarSection = .rules
     @ObservationIgnored var openWindowAction: (() -> Void)?
 
-    @ObservationIgnored private let store = JSONStore()
+    @ObservationIgnored private let store = JSONStore(directory: Snapshots.directory)
     @ObservationIgnored private var monitor: FolderMonitor?
     @ObservationIgnored private var watchedPaths: Set<String> = []
     @ObservationIgnored private var inFlight: Set<String> = []

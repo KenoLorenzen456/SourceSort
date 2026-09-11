@@ -1,4 +1,6 @@
-# SourceSort
+<p align="center"><img src="docs/logo.png" width="128" alt="SourceSort icon"></p>
+
+<h1 align="center">SourceSort</h1>
 
 [![CI](https://github.com/KenoLorenzen456/SourceSort/actions/workflows/ci.yml/badge.svg)](https://github.com/KenoLorenzen456/SourceSort/actions/workflows/ci.yml)
 ![macOS 15+](https://img.shields.io/badge/macOS-15%2B-blue)
@@ -12,6 +14,18 @@ A menu-bar utility for macOS that files your downloads by **the website they cam
 > SourceSort processes file metadata locally on your Mac. Nothing is uploaded.
 
 It has no accounts, no telemetry, no network access and no AI.
+
+## Screenshots
+
+<p align="center"><img src="docs/screenshots/menu-bar.png" width="340" alt="Menu bar popover with recent downloads and Undo buttons"></p>
+
+| Rules | Activity |
+| --- | --- |
+| ![Rules: GitHub, Hugging Face, Installers and Invoices](docs/screenshots/rules.png) | ![Activity list with source, rule, result and Undo](docs/screenshots/activity.png) |
+
+![Settings: login item, menu bar, notifications, watched folders and sorting options](docs/screenshots/settings.png)
+
+The screenshots use demo data. To regenerate them, run `SOURCESORT_SNAPSHOTS=docs/screenshots dist/SourceSort.app/Contents/MacOS/SourceSort`. This leaves your real rules and history untouched.
 
 ## What it does
 

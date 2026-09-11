@@ -52,7 +52,11 @@ struct MenuBarLabel: View {
 final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         UNUserNotificationCenter.current().delegate = self
-        AppModel.shared.start()
+        if Snapshots.directory != nil {
+            Task { await Snapshots.run(.shared) }
+        } else {
+            AppModel.shared.start()
+        }
     }
 
     /// Opening the app again (Finder, Spotlight, Dock) shows the main window — the way back in if the menu bar icon is hidden.
